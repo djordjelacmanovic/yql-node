@@ -4,7 +4,7 @@ module.exports = {
   oauth : null,
 
   withOAuth : function(consumer_key,consumer_secret){
-    oauth = new OAuth.OAuth(
+    this.oauth = new OAuth.OAuth(
       'https://query.yahooapis.com/v1/yql/',
       'https://query.yahooapis.com/v1/yql/',
        consumer_key, //consumer key
@@ -18,8 +18,8 @@ module.exports = {
     return this;
   },
   execute: function(query, callback){
-    if(oauth!=null){
-      oauth.post('https://query.yahooapis.com/v1/yql',
+    if(this.oauth!=null){
+      this.oauth.post('https://query.yahooapis.com/v1/yql',
 	               '',
 	               '',
 	              {q:query},

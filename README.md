@@ -36,7 +36,7 @@ All contributions welcome.
 
 ## Licence
 
-[MIT] (https://github.com/djordjelacmanovic/yql-node/blob/master/LICENSE-MIT.txt)
+[MIT] (https://github.com/djordjelacmanovic/yql-node/blob/master/LICENSE)
 
 ## Release History
 
