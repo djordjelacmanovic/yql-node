@@ -1,0 +1,28 @@
+{
+  "name": "yql-node",
+  "version": "0.1.0",
+  "description": "A YQL helper module for easy queries against YQL API. Includes OAuth access as well for those who wish authenticated access.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djordjelacmanovic/yql-node.git"
+  },
+  "keywords": [
+    "yql",
+    "oauth",
+    "api"
+  ],
+  "author": "Djordje Lacmanovic <djordje.lacmanovic@gmail.com> (http://djordjelacmanovic.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djordjelacmanovic/yql-node/issues"
+  },
+  "homepage": "https://github.com/djordjelacmanovic/yql-node#readme",
+  "dependencies": {
+    "needle": "^0.10.0",
+    "oauth": "^0.9.13"
+  }
+}
