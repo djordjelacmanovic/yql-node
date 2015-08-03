@@ -13,7 +13,7 @@ module.exports = {
       null,
       'HMAC-SHA1'
     );
-    oauth.setClientOptions({ requestTokenHttpMethod: 'POST' });
+    this.oauth.setClientOptions({ requestTokenHttpMethod: 'POST' });
 
     return this;
   },
@@ -28,8 +28,10 @@ module.exports = {
       needle
           .post("https://query.yahooapis.com/v1/public/yql",
            {q:query} ,
-           { multipart: true },
-            callback);
+           { multipart: false },
+            function(err,res){
+              callback(err,res.body);
+            });
     }
   }
 }
