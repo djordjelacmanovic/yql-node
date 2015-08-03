@@ -1,5 +1,6 @@
 yql-node
 =========
+[![NPM](https://nodei.co/npm/yql-node.png?compact=true)](https://nodei.co/npm/yql-node/)
 
 A small module providing utility methods for accessing YQL API. Provides optional OAuth access helper.
 Most other node modules for YQL failed for me on large query strings so this one uses POST method.
