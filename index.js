@@ -1,7 +1,7 @@
 var OAuth = require('oauth');
 var needle = require('needle');
 module.exports = {
-  oauth = null;
+  oauth : null,
 
   withOAuth : function(consumer_key,consumer_secret){
     oauth = new OAuth.OAuth(
@@ -16,7 +16,7 @@ module.exports = {
     oauth.setClientOptions({ requestTokenHttpMethod: 'POST' });
 
     return this;
-  }
+  },
   execute: function(query, callback){
     if(oauth!=null){
       oauth.post('https://query.yahooapis.com/v1/yql',
