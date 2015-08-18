@@ -1,6 +1,6 @@
 {
   "name": "yql-node",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A YQL helper module for easy queries against YQL API. Includes OAuth access as well for those who wish authenticated access.",
   "main": "index.js",
   "scripts": {

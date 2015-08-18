@@ -11,9 +11,12 @@ Most other node modules for YQL failed for me on large query strings so this one
 
 ## Usage
 ```javascript
-  var yql = require('yql-node'),
-      yqlWithOAuth = yql.withOAuth('CONSUMER KEY','CONSUMER SECRET'),
-      query = 'select * from html where url="http://example.com"; ';
+  //call public endpoints out of the box by simple require
+  var yql = require('yql-node');
+  //or set the instance to use OAuth and non-public endpoint like this
+  var yqlWithOAuth = require('yql-node').withOAuth('CONSUMER KEY','CONSUMER SECRET');
+  
+  var query = 'select * from html where url="http://example.com"; ';
 
   //these two calls will produce same results
 
@@ -40,5 +43,5 @@ All contributions welcome.
 [MIT] (https://github.com/djordjelacmanovic/yql-node/blob/master/LICENSE)
 
 ## Release History
-
+* 0.1.5 Bug fixes and example improvement 
 * 0.1.0 Initial release
