@@ -19,7 +19,10 @@ Most other node modules for YQL failed for me on large query strings so this one
   var query = 'select * from html where url="http://example.com"; ';
 
   //these two calls will produce same results
-
+  
+  //response passed to your callback will a string containing the YQL query result
+  //so you read data straight from it
+  
   yql.execute(query, function(error,response){
     console.log(response);
   });
