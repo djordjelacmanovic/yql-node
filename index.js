@@ -25,13 +25,13 @@ module.exports = {
       this.oauth.post('https://query.yahooapis.com/v1/yql',
 	               '',
 	               '',
-	              {q:query},
+	              {q:query,format:"json"},
                 callback);
     }else{
       //no oauth so calling public endpoint
       needle
           .post("https://query.yahooapis.com/v1/public/yql",
-           {q:query} ,
+           {q:query,format:"json"} ,
            { multipart: false },
             function(err,res){
               callback(err,res.body);
