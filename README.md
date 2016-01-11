@@ -5,6 +5,8 @@ yql-node
 A small module providing utility methods for accessing YQL API. Provides optional OAuth access helper.
 Most other node modules for YQL failed for me on large query strings so this one uses POST method.
 
+Modified to support returning json with a property called format, and a chainable constructor function.
+
 ## Installation
 
 ` npm install yql-node --save `
@@ -12,9 +14,11 @@ Most other node modules for YQL failed for me on large query strings so this one
 ## Usage
 ```javascript
   //call public endpoints out of the box by simple require
-  var yql = require('yql-node');
+  var yqlXML = require('yql-node');
+  var yql = require('yql-node').formatAsJSON();
   //or set the instance to use OAuth and non-public endpoint like this
-  var yqlWithOAuth = require('yql-node').withOAuth('CONSUMER KEY','CONSUMER SECRET');
+  var yqlWithOAuthXML = require('yql-node').withOAuth('CONSUMER KEY','CONSUMER SECRET');
+  var yqlWithOAuth = require('yql-node').formatAsJSON().withOAuth('CONSUMER KEY','CONSUMER SECRET');
   
   var query = 'select * from html where url="http://example.com"; ';
 
@@ -24,10 +28,29 @@ Most other node modules for YQL failed for me on large query strings so this one
   //so you read data straight from it
   
   yql.execute(query, function(error,response){
+    console.log("yql:");
+    console.log(response);
+  });
+  
+  yql.formatAsXML().execute(query, function(error,response){
+    console.log("yql as XML:");
     console.log(response);
   });
 
+
+  yqlXML.execute(query, function(error,response){
+    console.log("yqlXML:");
+    console.log(response);
+  });
+  yqlXML.format = 'json';
+  yqlXML.execute(query, function(error,response){
+    console.log("yqlXML as json:");
+    console.log(response);
+  });
+
+
   yqlWithOAuth.execute(query, function(error,response){
+    console.log("yqlOAuth:");
     console.log(response);
   });
 ```
