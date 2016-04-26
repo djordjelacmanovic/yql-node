@@ -3,6 +3,7 @@ var needle = require('needle');
 module.exports = {
     oauth: null,
     format: null,
+    parameters: {},
     //yql-node used to output only xml, now the formatAsJSON chainloader should help.
     withOAuth: function (consumer_key, consumer_secret) {
         this.oauth = new OAuth.OAuth(
@@ -26,18 +27,22 @@ module.exports = {
         this.format = 'xml';
         return this;
     },
+    setQueryParameter: function(parameters) {
+        this.parameters = Object.assign(this.parameters, parameters);
+        return this;
+    },
 
     execute: function (query, callback) {
         if (this.oauth != null) {
             this.oauth.post('https://query.yahooapis.com/v1/yql',
               '',
               '',
-              { q: query, format: this.format || 'xml' },
+              Object.assign({ q: query, format: this.format || 'xml' }, this.parameters),
               callback);
         } else {
             needle
               .post("https://query.yahooapis.com/v1/public/yql",
-                { q: query, format: this.format || 'xml' },
+                Object.assign({ q: query, format: this.format || 'xml' }, this.parameters),
                 { multipart: false },
                 function (err, res) {
                     callback(err, res.body);
