@@ -72,8 +72,8 @@ It is also possible to set query parameters to utilize e.g. datatables.org. An e
 ```
 ## Dependencies and credits
 
-[needle] (https://www.npmjs.com/package/needle)
-[oauth]  (https://www.npmjs.com/package/oauth)
+[needle](https://www.npmjs.com/package/needle)
+[oauth](https://www.npmjs.com/package/oauth)
 
 ## Contributing
 
@@ -82,7 +82,7 @@ All contributions welcome.
 
 ## Licence
 
-[MIT] (https://github.com/djordjelacmanovic/yql-node/blob/master/LICENSE)
+[MIT](https://github.com/djordjelacmanovic/yql-node/blob/master/LICENSE)
 
 ## Release History
 * 0.2.1 Ability to pass query parameter to utilize datatables.org
